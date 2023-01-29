@@ -84,20 +84,24 @@ def create_json():
     json_object = json.dumps(dict, indent=4)
     return json_object
 
-def create_product():
+def create_item_in_database():
     data = json.loads(create_json())['Content'][0]
     print(data)
 
-def save_product():
+    # unpack data
+
+    # validate data
+
+    # save data
+
+
+def read_item():
     pass
 
-def read_product():
+def edit_item():
     pass
 
-def edit_product():
-    pass
-
-def delete_product():
+def delete_item():
     pass
 
 
