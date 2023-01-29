@@ -56,7 +56,8 @@ def show_generated_qr_code():
     return
 
 # returns a json object
-def convert_to_json():
+def create_json():
+
     IMAGE_NAME = 'test2.png'
 
     image = cv.imread(IMAGE_NAME)
@@ -84,7 +85,8 @@ def convert_to_json():
     return json_object
 
 def create_product():
-    pass
+    data = json.loads(create_json())['Content'][0]
+    print(data)
 
 def save_product():
     pass
@@ -106,4 +108,4 @@ def get_cv_version():
 
 # get_cv_version()
 
-print(convert_to_json())
+create_product()
