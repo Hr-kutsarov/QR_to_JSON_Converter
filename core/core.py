@@ -112,4 +112,4 @@ def get_cv_version():
 
 # get_cv_version()
 
-create_product()
+create_item_in_database()
