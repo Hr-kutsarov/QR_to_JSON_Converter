@@ -57,7 +57,7 @@ def show_generated_qr_code():
 
 # returns a json object
 def convert_to_json():
-    IMAGE_NAME = 'test.png'
+    IMAGE_NAME = 'test2.png'
 
     image = cv.imread(IMAGE_NAME)
     qrcode_detector = cv.QRCodeDetector()
@@ -76,15 +76,8 @@ def convert_to_json():
     # The numpy.ndarray is a binary value of 0 and 255
     # representing the black and white of each cell of the QR code.
 
-    # get the string and separate the key-value pairs
-    info = decoded_info[0].split('%')
-
-    # fill up a dictionary with the found pairs
-    dict = {}
-    for item in info:
-        key, value = item.split('-')
-        dict[key] = value
-
+    # pack the content of the code into a dictionary
+    dict = {'Content': decoded_info}
 
     # create a JSON file from dictionary
     json_object = json.dumps(dict, indent=4)
